@@ -5,6 +5,9 @@
 
 Easy to use util to help developer to change app theme.
 
+> 开发中常常遇到切换主题，夜间模式什么的，一般的做法都是变了新主题就判断一下重新设置新值，代码量较多还不够清晰。  
+> 本库将主题素材与代码进行了分离，力求一次代码绑定，后续只需要更改素材即可实现主题样式更改  
+
 
 Features
 ============
@@ -23,7 +26,7 @@ Usage
 
 		_manager = [[YRThemeManager alloc]init];
 		//绑定各种控件数据
-	    [_manager bindView:self.view bgColorName:@"commonBgColor"];
+	    [_manager bindView:self.view bgColorName:@"commonBgColor"];
 		[_manager bindImageView:self.imageView imageName:@"testImage1"];
     	[_manager bindLabel:self.label titleColorName:@"labelTitleColor"];
     	[_manager bindButton:self.button titleColorName:@"labelTitleColor" state:UIControlStateNormal];
