@@ -40,7 +40,8 @@ Usage
     	// 仅当前manager管理的主题更改
    		[_manager updateToTheme:@"Dark"];
     
-
+4. 如果遇到无法绑定的属性（比如layer的颜色什么的），那只能老老实实通过监听kYRThemeChangeNotification来处理主题变更的功能了。
+ 
 
 ## Author
 
