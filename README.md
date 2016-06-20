@@ -9,7 +9,7 @@ Easy to use util to help developer to change app theme.
 > 本库将主题素材与代码进行了分离，力求一次代码绑定，后续只需要更改素材即可实现主题样式更改  
  
 
-install  
+Install  
 ===========
 -  使用pod
 
