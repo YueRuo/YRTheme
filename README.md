@@ -7,6 +7,17 @@ Easy to use util to help developer to change app theme.
 
 > 开发中常常遇到切换主题，夜间模式什么的，一般的做法都是变了新主题就判断一下重新设置新值，代码量较多还不够清晰。  
 > 本库将主题素材与代码进行了分离，力求一次代码绑定，后续只需要更改素材即可实现主题样式更改  
+ 
+
+install  
+===========
+-  使用pod
+
+		pod 'YRTheme'
+使用Pod安装的，只包含YRTheme和YRThemeManager两个类，具体的theme素材获取方法需要自行实现，或者也可以手动下载本demo中做了实现的ThemeHelper类。
+
+- 手动安装，下载代码，拷贝项目下YRTheme/ThemeHelper、YRTheme/YRTheme两个目录到工程中即可
+
 
 
 Features
