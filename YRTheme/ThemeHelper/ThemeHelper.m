@@ -8,11 +8,12 @@
 
 #import "ThemeHelper.h"
 #import "YRTheme.h"
+#import <Foundation/Foundation.h>
 
 @implementation ThemeHelper
 
 + (UIImage *)getImage:(NSString*)imageThemeName theme:(NSString*)theme{
-    //这里以打包在客户端内的素材为例，也可根据个人项目需要，修改代码为网上下载后的目录地址或文件地址
+    //这里以打包在客户端内的素材为例，也可根据个人项目需要，修改代码为网上下载后的目录地址或文件地址
     NSString *fileName = [NSString stringWithFormat:@"%@Image",theme];
     NSString *plistPath = [[NSBundle mainBundle] pathForResource:fileName ofType:@"plist"];
     NSMutableDictionary *dic = [[NSMutableDictionary alloc] initWithContentsOfFile:plistPath];
@@ -23,7 +24,7 @@
     return nil;
 }
 + (UIColor *)getColor:(NSString*)colorThemeName theme:(NSString*)theme{
-    //这里以打包在客户端内的素材为例，也可根据个人项目需要，修改代码为网上下载后的目录地址或文件地址
+    //这里以打包在客户端内的素材为例，也可根据个人项目需要，修改代码为网上下载后的目录地址或文件地址
     NSString *fileName = [NSString stringWithFormat:@"%@Color",theme];
     NSString *plistPath = [[NSBundle mainBundle] pathForResource:fileName ofType:@"plist"];
     NSMutableDictionary *dic = [[NSMutableDictionary alloc] initWithContentsOfFile:plistPath];

@@ -60,7 +60,7 @@ wangxiaoyu, wxy_yueruo@126.com
 
 ## License
 
-YRThemeDemo is available under the MIT license. See the LICENSE file for more info.
+YRTheme is available under the MIT license. See the LICENSE file for more info.
 
 
 ---
