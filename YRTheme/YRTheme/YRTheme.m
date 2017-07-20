@@ -56,4 +56,13 @@ NSString *const kYRThemeChangeNotification = @"kYRThemeChangeNotification";
     }
     return [UIColor redColor];
 }
+- (id)valueWithName:(NSString *)valueName{
+    return [self valueWithName:valueName theme:self.currentThemeName];
+}
+- (id)valueWithName:(NSString *)valueName theme:(NSString *)themeName{
+    if (themeName && self.getValueBlock) {
+        return self.getValueBlock(themeName, valueName);
+    }
+    return [UIColor redColor];
+}
 @end

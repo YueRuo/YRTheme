@@ -11,6 +11,7 @@
 static const NSString *kYRThemeObjViewBg = @"kYRThemeObjViewBg";
 static const NSString *kYRThemeObjTitleColor = @"kYRThemeObjTitleColor";
 static const NSString *kYRThemeObjImage = @"kYRThemeObjImage";
+static const NSString *kYRThemeObjViewValue = @"kYRThemeObjViewValue";
 
 @interface YRThemeSafeObject : NSObject<NSCopying>
 @property (weak, nonatomic) id obj;
@@ -55,8 +56,16 @@ static const NSString *kYRThemeObjImage = @"kYRThemeObjImage";
             [_themeObjDic removeObjectForKey:key];
         } else {
             NSString *bgColorString = [obj objectForKey:kYRThemeObjViewBg];
+            NSDictionary *valueDic = [obj objectForKey:kYRThemeObjViewValue];
             if (bgColorString) {
                 [view setBackgroundColor:[[YRTheme shared]colorWithName:bgColorString theme:themeName]];
+            }
+            if (valueDic) {
+                [valueDic enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull valueName, void(^block)(id value)  , BOOL * _Nonnull stop) {
+                    if (block) {
+                        block(YRThemeValue(valueName));
+                    }
+                }];
             }
             if ([view isKindOfClass:[UILabel class]]) {
                 NSString *titleColorString = [obj objectForKey:kYRThemeObjTitleColor];
@@ -183,6 +192,20 @@ static const NSString *kYRThemeObjImage = @"kYRThemeObjImage";
         [objDic setObject:bgImageThemeName forKey:kYRThemeObjViewBg];
         dispatch_async(dispatch_get_main_queue(), ^{
             [button setBackgroundImage:YRThemeImage(bgImageThemeName) forState:state];
+        });
+    });
+}
+- (void)bindView:(UIView *)view block:(void(^)(id value))block byName:(NSString *)valueName{
+    if (!block) {
+        return;
+    }
+    dispatch_sync(_themeQueue, ^{
+        YRThemeSafeObject *safeObj = [self themeSafeObjectForView:view];
+        NSMutableDictionary *objDic = [self dictionaryForSafeObj:safeObj];
+        NSDictionary *valueDic = [NSDictionary dictionaryWithObject:block forKey:valueName];
+        [objDic setObject:valueDic forKey:kYRThemeObjViewValue];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            block(YRThemeValue(valueName));
         });
     });
 }

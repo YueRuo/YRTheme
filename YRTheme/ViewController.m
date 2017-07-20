@@ -33,6 +33,13 @@
     [_manager bindButton:self.button titleColorName:@"buttonHighlight" state:UIControlStateHighlighted];
     [_manager bindButton:self.button1 titleColorName:@"labelTitleColor" state:UIControlStateNormal];
     [_manager bindButton:self.button1 titleColorName:@"buttonHighlight" state:UIControlStateHighlighted];
+    
+    __weak typeof(self) selfWeak = self;
+    self.label.layer.borderColor = [UIColor redColor].CGColor;
+    
+    [_manager bindView:self.label block:^(id value) {
+        selfWeak.label.layer.borderWidth = [value floatValue];
+    } byName:@"commonBorderWidth"];
 
 }
 - (IBAction)changeTheme:(id)sender {

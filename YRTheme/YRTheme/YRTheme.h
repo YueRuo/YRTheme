@@ -11,8 +11,13 @@
 
 #define YRThemeImage(imageName) [[YRTheme shared] imageWithName:imageName]
 #define YRThemeColor(colorName) [[YRTheme shared] colorWithName:colorName]
+#define YRThemeValue(valueName) [[YRTheme shared] valueWithName:valueName]
 
 extern NSString *const kYRThemeChangeNotification;
+
+typedef UIImage * (^YRThemeGetImageBlock)(NSString *themeName, NSString *imageName);
+typedef UIColor * (^YRThemeGetColorBlock)(NSString *themeName, NSString *colorName);
+typedef id (^YRThemeGetValueBlock)(NSString *themeName, NSString *valueName);
 
 @interface YRTheme : NSObject
 /*!
@@ -36,10 +41,13 @@ extern NSString *const kYRThemeChangeNotification;
 //          开发者需要提供这两个block，用于处理具体的theme获取素材功能
 //          其实这里也可以设计成使用protocol来要求提供数据
 //******************************
-@property (copy, nonatomic) UIImage * (^getImageBlock)(NSString *themeName, NSString *imageName);
-@property (copy, nonatomic) UIColor * (^getColorBlock)(NSString *themeName, NSString *colorName);
--(void)setGetColorBlock:(UIColor *(^)(NSString *themeName, NSString *colorName))getColorBlock;
--(void)setGetImageBlock:(UIImage *(^)(NSString *themeName, NSString *imageName))getImageBlock;
+@property (copy, nonatomic) YRThemeGetImageBlock getImageBlock;
+@property (copy, nonatomic) YRThemeGetColorBlock getColorBlock;
+@property (copy, nonatomic) YRThemeGetValueBlock getValueBlock;
+//下面几个for自动补全
+- (void)setGetImageBlock:(YRThemeGetImageBlock)getImageBlock;
+- (void)setGetColorBlock:(YRThemeGetColorBlock)getColorBlock;
+- (void)setGetValueBlock:(YRThemeGetValueBlock)getValueBlock;
 //----------------------------
 //-end-- 设置获取素材的方法
 //---------------------------
@@ -50,4 +58,7 @@ extern NSString *const kYRThemeChangeNotification;
 
 - (UIColor *)colorWithName:(NSString *)colorName;
 - (UIColor *)colorWithName:(NSString *)colorName theme:(NSString *)themeName;
+
+- (id)valueWithName:(NSString *)valueName;
+- (id)valueWithName:(NSString *)valueName theme:(NSString *)themeName;
 @end

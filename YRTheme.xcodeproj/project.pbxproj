@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F8E9C3D1F20E33800F73790 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 5F8E9C3C1F20E33800F73790 /* README.md */; };
 		AA80D4821D11397D004E0D3C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AA80D4811D11397D004E0D3C /* main.m */; };
 		AA80D4851D11397D004E0D3C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AA80D4841D11397D004E0D3C /* AppDelegate.m */; };
 		AA80D4881D11397D004E0D3C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA80D4871D11397D004E0D3C /* ViewController.m */; };
@@ -17,14 +18,13 @@
 		AA80D49D1D1139C1004E0D3C /* YRThemeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AA80D49B1D1139C1004E0D3C /* YRThemeManager.m */; };
 		AA80D4B81D125114004E0D3C /* blueimage.png in Resources */ = {isa = PBXBuildFile; fileRef = AA80D4B71D125114004E0D3C /* blueimage.png */; };
 		AA80D4BA1D125118004E0D3C /* whiteimage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AA80D4B91D125118004E0D3C /* whiteimage.jpg */; };
-		AA80D4C21D12521A004E0D3C /* DarkColor.plist in Resources */ = {isa = PBXBuildFile; fileRef = AA80D4BC1D12521A004E0D3C /* DarkColor.plist */; };
-		AA80D4C31D12521A004E0D3C /* DarkImage.plist in Resources */ = {isa = PBXBuildFile; fileRef = AA80D4BD1D12521A004E0D3C /* DarkImage.plist */; };
-		AA80D4C41D12521A004E0D3C /* DefaultColor.plist in Resources */ = {isa = PBXBuildFile; fileRef = AA80D4BE1D12521A004E0D3C /* DefaultColor.plist */; };
-		AA80D4C51D12521A004E0D3C /* DefaultImage.plist in Resources */ = {isa = PBXBuildFile; fileRef = AA80D4BF1D12521A004E0D3C /* DefaultImage.plist */; };
+		AA80D4C21D12521A004E0D3C /* DarkTheme.plist in Resources */ = {isa = PBXBuildFile; fileRef = AA80D4BC1D12521A004E0D3C /* DarkTheme.plist */; };
+		AA80D4C41D12521A004E0D3C /* DefaultTheme.plist in Resources */ = {isa = PBXBuildFile; fileRef = AA80D4BE1D12521A004E0D3C /* DefaultTheme.plist */; };
 		AA80D4C91D125236004E0D3C /* ThemeHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = AA80D4C81D125236004E0D3C /* ThemeHelper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5F8E9C3C1F20E33800F73790 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		AA80D47D1D11397D004E0D3C /* YRTheme.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YRTheme.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA80D4811D11397D004E0D3C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AA80D4831D11397D004E0D3C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -41,10 +41,8 @@
 		AA80D49B1D1139C1004E0D3C /* YRThemeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YRThemeManager.m; sourceTree = "<group>"; };
 		AA80D4B71D125114004E0D3C /* blueimage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueimage.png; sourceTree = "<group>"; };
 		AA80D4B91D125118004E0D3C /* whiteimage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = whiteimage.jpg; sourceTree = "<group>"; };
-		AA80D4BC1D12521A004E0D3C /* DarkColor.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DarkColor.plist; sourceTree = "<group>"; };
-		AA80D4BD1D12521A004E0D3C /* DarkImage.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DarkImage.plist; sourceTree = "<group>"; };
-		AA80D4BE1D12521A004E0D3C /* DefaultColor.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DefaultColor.plist; sourceTree = "<group>"; };
-		AA80D4BF1D12521A004E0D3C /* DefaultImage.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DefaultImage.plist; sourceTree = "<group>"; };
+		AA80D4BC1D12521A004E0D3C /* DarkTheme.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DarkTheme.plist; sourceTree = "<group>"; };
+		AA80D4BE1D12521A004E0D3C /* DefaultTheme.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DefaultTheme.plist; sourceTree = "<group>"; };
 		AA80D4C71D125236004E0D3C /* ThemeHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThemeHelper.h; sourceTree = "<group>"; };
 		AA80D4C81D125236004E0D3C /* ThemeHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThemeHelper.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -63,6 +61,7 @@
 		AA80D4741D11397D004E0D3C = {
 			isa = PBXGroup;
 			children = (
+				5F8E9C3C1F20E33800F73790 /* README.md */,
 				AA80D47F1D11397D004E0D3C /* YRTheme */,
 				AA80D47E1D11397D004E0D3C /* Products */,
 			);
@@ -120,10 +119,8 @@
 			children = (
 				AA80D4C71D125236004E0D3C /* ThemeHelper.h */,
 				AA80D4C81D125236004E0D3C /* ThemeHelper.m */,
-				AA80D4BC1D12521A004E0D3C /* DarkColor.plist */,
-				AA80D4BD1D12521A004E0D3C /* DarkImage.plist */,
-				AA80D4BE1D12521A004E0D3C /* DefaultColor.plist */,
-				AA80D4BF1D12521A004E0D3C /* DefaultImage.plist */,
+				AA80D4BC1D12521A004E0D3C /* DarkTheme.plist */,
+				AA80D4BE1D12521A004E0D3C /* DefaultTheme.plist */,
 			);
 			path = ThemeHelper;
 			sourceTree = "<group>";
@@ -185,14 +182,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA80D4C41D12521A004E0D3C /* DefaultColor.plist in Resources */,
-				AA80D4C51D12521A004E0D3C /* DefaultImage.plist in Resources */,
+				AA80D4C41D12521A004E0D3C /* DefaultTheme.plist in Resources */,
 				AA80D4901D11397D004E0D3C /* LaunchScreen.storyboard in Resources */,
 				AA80D48D1D11397D004E0D3C /* Assets.xcassets in Resources */,
 				AA80D4BA1D125118004E0D3C /* whiteimage.jpg in Resources */,
-				AA80D4C21D12521A004E0D3C /* DarkColor.plist in Resources */,
+				AA80D4C21D12521A004E0D3C /* DarkTheme.plist in Resources */,
 				AA80D4B81D125114004E0D3C /* blueimage.png in Resources */,
-				AA80D4C31D12521A004E0D3C /* DarkImage.plist in Resources */,
 				AA80D48B1D11397D004E0D3C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -207,6 +202,7 @@
 				AA80D4881D11397D004E0D3C /* ViewController.m in Sources */,
 				AA80D4851D11397D004E0D3C /* AppDelegate.m in Sources */,
 				AA80D4C91D125236004E0D3C /* ThemeHelper.m in Sources */,
+				5F8E9C3D1F20E33800F73790 /* README.md in Sources */,
 				AA80D49D1D1139C1004E0D3C /* YRThemeManager.m in Sources */,
 				AA80D49C1D1139C1004E0D3C /* YRTheme.m in Sources */,
 				AA80D4821D11397D004E0D3C /* main.m in Sources */,
@@ -360,6 +356,7 @@
 				AA80D4961D11397D004E0D3C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

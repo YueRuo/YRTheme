@@ -42,7 +42,10 @@ Usage
     	[_manager bindLabel:self.label titleColorName:@"labelTitleColor"];
     	[_manager bindButton:self.button titleColorName:@"labelTitleColor" state:UIControlStateNormal];
     	[_manager bindButton:self.button titleColorName:@"buttonHighlight" state:UIControlStateHighlighted];
-    
+        //绑定复杂属性
+        [_manager bindView:self.label block:^(id value) {
+        selfWeak.label.layer.borderWidth = [value floatValue];
+        } byName:@"commonBorderWidth"];
     
 3. 变更主题皮肤
 
@@ -51,7 +54,7 @@ Usage
     	// 仅当前manager管理的主题更改
    		[_manager updateToTheme:@"Dark"];
     
-4. 如果遇到无法绑定的属性（比如layer的颜色什么的），那只能老老实实通过监听kYRThemeChangeNotification来处理主题变更的功能了。
+4. 如果遇到实在无法绑定的属性，那最后还可以通过监听kYRThemeChangeNotification来处理主题变更的功能。
  
 
 ## Author

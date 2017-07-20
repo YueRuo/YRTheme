@@ -22,6 +22,7 @@
 - (void)bindButton:(UIButton *)button titleColorName:(NSString *)colorThemeName state:(UIControlState)state;
 - (void)bindButton:(UIButton *)button bgImageName:(NSString *)bgImageThemeName state:(UIControlState)state;
 
+- (void)bindView:(UIView *)view block:(void(^)(id value))block byName:(NSString *)valueName;
 
 /*!
  *	@brief	手动设置该管理类中控件的主题，一般情况下不需要使用该方法

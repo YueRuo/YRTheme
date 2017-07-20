@@ -14,7 +14,7 @@
 
 + (UIImage *)getImage:(NSString*)imageThemeName theme:(NSString*)theme{
     //这里以打包在客户端内的素材为例，也可根据个人项目需要，修改代码为网上下载后的目录地址或文件地址
-    NSString *fileName = [NSString stringWithFormat:@"%@Image",theme];
+    NSString *fileName = [NSString stringWithFormat:@"%@Theme",theme];
     NSString *plistPath = [[NSBundle mainBundle] pathForResource:fileName ofType:@"plist"];
     NSMutableDictionary *dic = [[NSMutableDictionary alloc] initWithContentsOfFile:plistPath];
     NSString *imageName = [dic objectForKey:imageThemeName];
@@ -25,7 +25,7 @@
 }
 + (UIColor *)getColor:(NSString*)colorThemeName theme:(NSString*)theme{
     //这里以打包在客户端内的素材为例，也可根据个人项目需要，修改代码为网上下载后的目录地址或文件地址
-    NSString *fileName = [NSString stringWithFormat:@"%@Color",theme];
+    NSString *fileName = [NSString stringWithFormat:@"%@Theme",theme];
     NSString *plistPath = [[NSBundle mainBundle] pathForResource:fileName ofType:@"plist"];
     NSMutableDictionary *dic = [[NSMutableDictionary alloc] initWithContentsOfFile:plistPath];
     NSString *colorHex = [dic objectForKey:colorThemeName];
@@ -33,6 +33,14 @@
         return [self colorWithHexString:colorHex];
     }
     return nil;
+}
++ (id)getValue:(NSString*)valueThemeName theme:(NSString*)theme{
+    //这里以打包在客户端内的素材为例，也可根据个人项目需要，修改代码为网上下载后的目录地址或文件地址
+    NSString *fileName = [NSString stringWithFormat:@"%@Theme",theme];
+    NSString *plistPath = [[NSBundle mainBundle] pathForResource:fileName ofType:@"plist"];
+    NSMutableDictionary *dic = [[NSMutableDictionary alloc] initWithContentsOfFile:plistPath];
+    id value = [dic objectForKey:valueThemeName];
+    return value;
 }
 
 + (void)configTheme{
@@ -53,6 +61,14 @@
             resultColor = [self getColor:colorName theme:[[YRTheme shared] defaultThemeName]];
         }
         return resultColor;
+    }];
+    //设置获取原始值
+    [[YRTheme shared]setGetValueBlock:^id(NSString *themeName, NSString *valueName) {
+        id value = [self getValue:valueName theme:themeName];
+        if (!value) {
+            value = [self getValue:valueName theme:[[YRTheme shared] defaultThemeName]];
+        }
+        return value;
     }];
 }
 

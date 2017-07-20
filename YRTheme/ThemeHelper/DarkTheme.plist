@@ -3,10 +3,14 @@
 <plist version="1.0">
 <dict>
 	<key>commonBgColor</key>
-	<string>ffffff</string>
+	<string>acacac</string>
 	<key>labelTitleColor</key>
-	<string>ff00ff</string>
+	<string>ffffff</string>
 	<key>buttonHighlight</key>
-	<string>00f000</string>
+	<string>0000f0</string>
+	<key>testImage1</key>
+	<string>blueimage.png</string>
+	<key>commonBorderWidth</key>
+	<integer>5</integer>
 </dict>
 </plist>
