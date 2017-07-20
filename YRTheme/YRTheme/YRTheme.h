@@ -15,9 +15,9 @@
 
 extern NSString *const kYRThemeChangeNotification;
 
-typedef UIImage * (^YRThemeGetImageBlock)(NSString *themeName, NSString *imageName);
-typedef UIColor * (^YRThemeGetColorBlock)(NSString *themeName, NSString *colorName);
-typedef id (^YRThemeGetValueBlock)(NSString *themeName, NSString *valueName);
+typedef UIImage * (^YRThemeGetImageBlock)(NSString *themeName, NSString *imageThemeName);
+typedef UIColor * (^YRThemeGetColorBlock)(NSString *themeName, NSString *colorThemeName);
+typedef id (^YRThemeGetValueBlock)(NSString *themeName, NSString *valueThemeName);
 
 @interface YRTheme : NSObject
 /*!
@@ -53,12 +53,12 @@ typedef id (^YRThemeGetValueBlock)(NSString *themeName, NSString *valueName);
 //---------------------------
 
 + (instancetype)shared;
-- (UIImage *)imageWithName:(NSString *)imageName;
-- (UIImage *)imageWithName:(NSString *)imageName theme:(NSString *)themeName;
+- (UIImage *)imageWithName:(NSString *)imageThemeName;
+- (UIImage *)imageWithName:(NSString *)imageThemeName theme:(NSString *)themeName;
 
-- (UIColor *)colorWithName:(NSString *)colorName;
-- (UIColor *)colorWithName:(NSString *)colorName theme:(NSString *)themeName;
+- (UIColor *)colorWithName:(NSString *)colorThemeName;
+- (UIColor *)colorWithName:(NSString *)colorThemeName theme:(NSString *)themeName;
 
-- (id)valueWithName:(NSString *)valueName;
-- (id)valueWithName:(NSString *)valueName theme:(NSString *)themeName;
+- (id)valueWithName:(NSString *)valueThemeName;
+- (id)valueWithName:(NSString *)valueThemeName theme:(NSString *)themeName;
 @end

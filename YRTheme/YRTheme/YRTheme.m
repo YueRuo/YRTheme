@@ -35,33 +35,33 @@ NSString *const kYRThemeChangeNotification = @"kYRThemeChangeNotification";
 }
 
 #pragma mark public
-- (UIImage *)imageWithName:(NSString *)imageName {
-    return [self imageWithName:imageName theme:self.currentThemeName];
+- (UIImage *)imageWithName:(NSString *)imageThemeName {
+    return [self imageWithName:imageThemeName theme:self.currentThemeName];
 }
 
-- (UIImage *)imageWithName:(NSString *)imageName theme:(NSString *)themeName {
+- (UIImage *)imageWithName:(NSString *)imageThemeName theme:(NSString *)themeName {
     if (themeName && self.getImageBlock) {
-        return self.getImageBlock(themeName, imageName);
+        return self.getImageBlock(themeName, imageThemeName);
     }
-    return [UIImage imageNamed:imageName];
+    return [UIImage imageNamed:imageThemeName];
 }
 
-- (UIColor *)colorWithName:(NSString *)colorName {
-    return [self colorWithName:colorName theme:self.currentThemeName];
+- (UIColor *)colorWithName:(NSString *)colorThemeName {
+    return [self colorWithName:colorThemeName theme:self.currentThemeName];
 }
 
-- (UIColor *)colorWithName:(NSString *)colorName theme:(NSString *)themeName {
+- (UIColor *)colorWithName:(NSString *)colorThemeName theme:(NSString *)themeName {
     if (themeName && self.getColorBlock) {
-        return self.getColorBlock(themeName, colorName);
+        return self.getColorBlock(themeName, colorThemeName);
     }
-    return [UIColor redColor];
+    return [UIColor whiteColor];
 }
-- (id)valueWithName:(NSString *)valueName{
-    return [self valueWithName:valueName theme:self.currentThemeName];
+- (id)valueWithName:(NSString *)valueThemeName{
+    return [self valueWithName:valueThemeName theme:self.currentThemeName];
 }
-- (id)valueWithName:(NSString *)valueName theme:(NSString *)themeName{
+- (id)valueWithName:(NSString *)valueThemeName theme:(NSString *)themeName{
     if (themeName && self.getValueBlock) {
-        return self.getValueBlock(themeName, valueName);
+        return self.getValueBlock(themeName, valueThemeName);
     }
     return [UIColor redColor];
 }
