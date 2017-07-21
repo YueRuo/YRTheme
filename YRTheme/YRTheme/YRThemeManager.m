@@ -53,7 +53,9 @@ static const NSString *kYRThemeObjViewValue = @"kYRThemeObjViewValue";
         NSDictionary *obj = [_themeObjDic objectForKey:key];
         UIView *view = [key obj];
         if (!view) {
-            [_themeObjDic removeObjectForKey:key];
+            dispatch_sync(_themeQueue, ^{
+                [_themeObjDic removeObjectForKey:key];
+            });
         } else {
             NSString *bgColorString = [obj objectForKey:kYRThemeObjViewBg];
             NSDictionary *valueDic = [obj objectForKey:kYRThemeObjViewValue];
@@ -99,6 +101,18 @@ static const NSString *kYRThemeObjViewValue = @"kYRThemeObjViewValue";
             }
         }
     }];
+}
+
+- (void)cleanUnusedViewTheme{
+    dispatch_sync(_themeQueue, ^{
+        NSArray *allKeys = [_themeObjDic allKeys];
+        [allKeys enumerateObjectsUsingBlock:^(id _Nonnull key, NSUInteger idx, BOOL *_Nonnull stop) {
+            UIView *view = [key obj];
+            if (!view) {
+                [_themeObjDic removeObjectForKey:key];
+            }
+        }];
+    });
 }
 
 #pragma mark private

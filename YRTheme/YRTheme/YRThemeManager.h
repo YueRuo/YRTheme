@@ -22,11 +22,23 @@
 - (void)bindButton:(UIButton *)button titleColorName:(NSString *)colorThemeName state:(UIControlState)state;
 - (void)bindButton:(UIButton *)button bgImageName:(NSString *)bgImageThemeName state:(UIControlState)state;
 
+/*!
+ *	@brief	可用于绑定复杂属性
+ *
+ *	@param 	view 	要绑定属性的view，该view被释放或销毁后，管理器内部会在一定实际清理无用的block
+ *	@param 	valueName 	主题中的属性名
+ */
 - (void)bindView:(UIView *)view block:(void(^)(id value))block byName:(NSString *)valueName;
+
 
 /*!
  *	@brief	手动设置该管理类中控件的主题，一般情况下不需要使用该方法
  */
 - (void)updateToTheme:(NSString *)themeName;
+
+/*!
+ *	@brief	尝试清理无用的绑定，减小内存
+ */
+- (void)cleanUnusedViewTheme;
 
 @end
